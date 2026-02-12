@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO₂ Pipeline Economic Model</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root">
+        <div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;">
+            <div style="text-align:center;">
+                <div style="font-size:24px;margin-bottom:16px;">Loading CO₂ Pipeline Model...</div>
+                <div style="color:#666;">Please wait while scripts load</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load React first -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    
+    <!-- Load Recharts -->
+    <script src="https://unpkg.com/prop-types@15.8.1/prop-types.min.js"></script>
+    <script src="https://unpkg.com/recharts@2.10.3/umd/Recharts.js"></script>
+    
+    <!-- Load Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone@7.23.5/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Destructure from globals
+        const { useState, useMemo, useEffect, useRef, useCallback } = React;
+        const { 
+            PieChart, Pie, Cell, 
+            BarChart, Bar, 
+            LineChart, Line, 
+            XAxis, YAxis, CartesianGrid, Tooltip, Legend, 
+            ResponsiveContainer, 
+            Area, AreaChart, 
+            ReferenceLine, 
+            ComposedChart 
+        } = Recharts;
+    </script>
+
+    <script type="text/babel" src="app.js"></script>
+    
+    <script type="text/babel">
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<CO2PipelineModel />);
+    </script>
+</body>
+</html>
